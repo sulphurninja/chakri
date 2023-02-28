@@ -56,10 +56,11 @@ function game() {
   //     console.log(winningNumber)
   //   }
   // );
-   useEffect(() => {
-    setTimeout(() => {
+  useEffect(() => {
+    const timerz = setTimeout(() => {
       window.location.reload();
     }, 2000);
+    return () => clearTimeout(timerz);
   }, []);
 
 
