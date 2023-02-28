@@ -1,8 +1,11 @@
 import React from 'react'
 import Cookie from 'js-cookie';
+import { DataContext } from '@/store/GlobalState';
 
 function HeaderText() {
  
+  const { state = {}, dispatch } = useContext(DataContext)
+
   const handleLogout = () => {
     Cookie.remove('refreshtoken', { path: '/api/auth/refreshToken' })
     localStorage.removeItem('firstLogin')
