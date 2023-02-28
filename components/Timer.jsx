@@ -6,12 +6,15 @@ export default function Time() {
     const [time, setTime] = useState(new Date());
     const { state, dispatch } = useContext(DataContext)
     const { auth } = state
+
+    
     useEffect(() => {
         const timer = setInterval(() => {
             setTime(new Date());
         }, 1000);
         return () => clearInterval(timer);
     }, []);
+
 
     const nextToDraw = new Date(
         time.getFullYear(),
@@ -33,7 +36,7 @@ export default function Time() {
         <div className=" border-2 flex border-white  overflow-hidden w-full mt-auto rounded-lg text-center ">
         <img src="/account.png" className="h-[20%]  w-[20%]" />
         {/* <h1 className="text-white my-auto ml-auto mr-auto font-bold">{auth.user.userName.substring(0, 7)}</h1> */}   
-        <h1 className="text-white my-auto ml-auto mr-auto font-bold">KuroKurkure</h1>
+        <h1 className="text-white my-auto ml-auto mr-auto font-bold">{auth.user?.userName.substring(0, 7)}</h1>
 
          </div>
         <div className=" mt-[11%] ml-[51%] ">

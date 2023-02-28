@@ -13,9 +13,9 @@ module.exports = {
 
 module.exports={
   env:{
-    "BASE_URL": "http://localhost:3000",
+    "BASE_URL": "http://betchakri.vercel.app",
     "MONGODB_URL":"mongodb+srv://aditya4sure:NewPassword@casino.0r9lzep.mongodb.net/?retryWrites=true&w=majority",
-    "ACCESS_TOKEN_SECRET":"2MqS&V^f_&UudgstXMbnd3LTdC_zkSzBYVB#Q=9%Rjm&fFBW6zTE3^s646kJ",
-    "REFRESH_TOKEN_SECRET":"S%=VY!nj3rkK@?VZ_v?bQVFzhz^rSA#vKgJ4Rb23j_XCjQXU?fY9AmA-MgJWHae9f*Xz%P*x$WaGT*7c8HM67B-R%Z_zcy"
+    "ACCESS_TOKEN_SECRET":"shfhxcbhjbdscxhjvbrv784ne89jf304wejtnf93now4ehsidnfuev4nr7isdtfhu3iqwr0jd3p9we0rfjw4niegsrubfyd",
+    "REFRESH_TOKEN_SECRET":"9sjdj38dj8dujeirjd93wq0qi02qi02ie93ie9384fh75yrhncvnsnvjxcjncjxdjksnI*O#*Jjdwjd0wjdiwfvkxc"
   }
 }
