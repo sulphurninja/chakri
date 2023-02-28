@@ -20,7 +20,7 @@ function HeaderText() {
       </div>
       <div className=' '>
 
-      <img src='/close.png' onClick={handleLogoutClick} className='h-[100%] lg:h-[60%] lg:w-[100%] w-[100%]' />
+      <img src='/close.png' onClick={handleLogout} className='h-[100%] cursor-pointer lg:h-[60%] lg:w-[100%] w-[100%]' />
       </div>
     </div>
 
