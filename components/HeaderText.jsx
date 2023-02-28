@@ -2,10 +2,7 @@ import React from 'react'
 
 
 function HeaderText() {
-  const handleLogoutClick = () => {
-    setShowModal(false);
-    handleLogout();
-  };
+ 
   const handleLogout = () => {
     Cookie.remove('refreshtoken', { path: '/api/auth/refreshToken' })
     localStorage.removeItem('firstLogin')
