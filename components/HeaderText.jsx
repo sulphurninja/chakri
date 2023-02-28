@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Cookie from 'js-cookie';
 
 function HeaderText() {
  
