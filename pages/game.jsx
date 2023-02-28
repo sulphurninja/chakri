@@ -56,15 +56,13 @@ function game() {
   //     console.log(winningNumber)
   //   }
   // );
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
+   useEffect(() => {
+    setTimeout(() => {
       window.location.reload();
     }, 2000);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
   }, []);
+
+
   useEffect(() => {
     const fetchWinningNumber = async () => {
       if (timeToDraw <= 30) { // Only fetch data when there are 5 seconds or less until the next draw
