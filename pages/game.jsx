@@ -8,6 +8,7 @@ import Wheel from '../components/Wheel'
 import axios from 'axios';
 import Timer from '../components/Timer'
 import Timerleft from '../components/Timerleft'
+import { Howl } from 'howler';
 
 function game() {
   const { state, dispatch } = useContext(DataContext)
@@ -19,6 +20,18 @@ function game() {
   const [open, setOpen] = useState(false);
   const [spinning, setSpinning] = useState(false);
   const [message, setMessage] = useState('')
+
+  const wheelSound = new Howl({
+    src: ['/wheel.mp3'],
+  });
+
+  const winningSound = new Howl({
+    src: ['/winning.mp3'],
+  });
+
+  const timeRemainingSound = new Howl({
+    src: ['/5sec.mp3'],
+  });
 
 
   useEffect(() => {
@@ -75,7 +88,7 @@ function game() {
     const timer = setInterval(() => {
       fetchWinningNumber();
     }, 1000);
-
+    
     return () => clearInterval(timer);
   }, [nextToDrawtime, timeToDraw]);
 
@@ -85,18 +98,28 @@ function game() {
       setSpinning(true);
       console.log(couponNum, 'this is client side result');
       setMustSpin(true);
+     
     }
-
-
   };
   function run() {
     if (timeToDraw == 0) {
       handleChange()
+      
+      
+    }
+    if(timeToDraw == 0){
+      wheelSound.play()
+    }
+    if(timeToDraw == 54){
+      winningSound.play()
+    }
+    if(timeToDraw== 5){
+timeRemainingSound.play()
     }
   }
   run();
 
-  
+
   return (
     <body className=' overflow-hidden  '>
       <video src='/video.mp4' className='absolute  w-screen' autoPlay={true} muted loop />
@@ -142,7 +165,6 @@ function game() {
             onStopSpinning={() => {
               setSpinning(false);
               setMustSpin(false);
-
             }}
           />
           {/** bahercha circle */}
