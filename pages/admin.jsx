@@ -30,7 +30,16 @@ function game() {
     };
     
     useEffect(() => {
-        window.location.reload();
+        const timeoutId = setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      
+        return () => {
+          clearTimeout(timeoutId);
+        };
+      }, []);
+      
+    useEffect(() => {
         const timer = setInterval(() => {
             setTime(new Date());
         }, 1000);
