@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react'
-
+import Timer from '../components/Timer'
 import Modal from '../components/ModalResult'
 
 function game() {
@@ -89,16 +89,16 @@ function game() {
                 <title>Chakri - Game</title>
             </Head>
             <HeaderText />
-            <div className='flex  '>
+            <div className='flex w-full  '>
               
                 {couponNums.map((number, index) => (
-                    <button className='text-black mx-4  rounded-full w-[50px] my-4 pl-4 font-bold text-xl bg-white text-center h-[50px]  flex ' key={index} onClick={() => handleButtonClick(index)}>
+                    <button className='text-black mx-4 text-sm pr-3 ml-auto rounded-full lg:w-[50px] w-[30px] h-[20px]  my-4 pl-4 font-bold bg-white text-center lg:h-[50px]  flex ' key={index} onClick={() => handleButtonClick(index)}>
                         {number || index }
                     </button>
                 ))}
                
                 </div>
-              
+              <Timer/>
            <div className='mt-[10%]'>
            <Link href='/register'>
            <h1 className='text-white text-5xl font-bold'>Create User ID</h1>
