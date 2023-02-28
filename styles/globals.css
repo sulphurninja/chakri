@@ -1,6 +1,7 @@
 html{
     background-image: url('/istockphoto-842444492-170667a.jpg');
     background-size: cover;
+    background-color: black;
 }
 
 @tailwind base;
