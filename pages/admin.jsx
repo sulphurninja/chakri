@@ -30,6 +30,7 @@ function game() {
     };
     
     useEffect(() => {
+        window.location.reload();
         const timer = setInterval(() => {
             setTime(new Date());
         }, 1000);
