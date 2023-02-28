@@ -82,7 +82,7 @@ function game() {
     const router = useRouter()
 
     return (
-        <body className='h-screen w-screen relative'>
+        <body className='h-screen w-screen relative overflow-hidden'>
             <Head>
                 <title>Chakri - Game</title>
             </Head>
