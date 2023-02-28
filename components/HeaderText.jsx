@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Cookie from 'js-cookie';
 import { DataContext } from '@/store/GlobalState';
 import { useRouter } from 'next/router';
