@@ -2,7 +2,7 @@ import HeaderText from '@/components/HeaderText';
 import { DataContext } from '@/store/GlobalState';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react'
 import HandleResults from '../components/HandleResults';
 import Wheel from '../components/Wheel'
 import axios from 'axios';
@@ -19,6 +19,7 @@ function game() {
   const [open, setOpen] = useState(false);
   const [spinning, setSpinning] = useState(false);
   const [message, setMessage] = useState('')
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -56,12 +57,6 @@ function game() {
   //     console.log(winningNumber)
   //   }
   // );
-  useEffect(() => {
-    const timerz = setTimeout(() => {
-      window.location.reload();
-    }, 2000);
-    return () => clearTimeout(timerz);
-  }, []);
 
 
   useEffect(() => {
@@ -101,6 +96,7 @@ function game() {
   }
   run();
 
+  
   return (
     <body className=' overflow-hidden  '>
       <video src='/video.mp4' className='absolute  w-screen' autoPlay={true} muted loop />

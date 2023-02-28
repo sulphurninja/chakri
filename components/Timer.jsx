@@ -38,7 +38,7 @@ export default function Time() {
          </div>
         <div className=" mt-[11%] ml-[51%] ">
             <div className="flex justify-center  mr-0 items-center bg-red-500 border-2 border-white rounded-full w-8 h-8 lg:h-24 lg:w-24  text-white font-bold ">
-                <p className="text-white text-center -200 text-5xl  flex  items-center">
+                <p className="text-white text-center -200 lg:text-5xl  flex  items-center">
                     {timeToDraw}     
                    
                 </p>
