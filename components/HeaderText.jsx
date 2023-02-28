@@ -2,7 +2,16 @@ import React from 'react'
 
 
 function HeaderText() {
- 
+  const handleLogoutClick = () => {
+    setShowModal(false);
+    handleLogout();
+  };
+  const handleLogout = () => {
+    Cookie.remove('refreshtoken', { path: '/api/auth/refreshToken' })
+    localStorage.removeItem('firstLogin')
+    dispatch({ type: 'AUTH', payload: {} })
+    router.push('/')
+  }
 
   return (
     <div className='flex ml-[5%]  '>
@@ -10,7 +19,8 @@ function HeaderText() {
         <img src='/fun.png' className='h-[100%] w-[100%] ' />
       </div>
       <div className=' '>
-      <img src='/close.png' className='h-[100%] lg:h-[60%] lg:w-[100%] w-[100%]' />
+
+      <img src='/close.png' onClick={handleLogoutClick} className='h-[100%] lg:h-[60%] lg:w-[100%] w-[100%]' />
       </div>
     </div>
 
