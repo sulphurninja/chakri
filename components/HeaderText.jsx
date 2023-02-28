@@ -1,16 +1,20 @@
 import React from 'react'
 import Cookie from 'js-cookie';
 import { DataContext } from '@/store/GlobalState';
+import { useRouter } from 'next/router';
 
 function HeaderText() {
  
   const { state = {}, dispatch } = useContext(DataContext)
+  const { auth = {} } = state
+
+  const router = useRouter();
 
   const handleLogout = () => {
     Cookie.remove('refreshtoken', { path: '/api/auth/refreshToken' })
     localStorage.removeItem('firstLogin')
     dispatch({ type: 'AUTH', payload: {} })
-    router.push('/')
+    router.push('/login')
   }
 
   return (
