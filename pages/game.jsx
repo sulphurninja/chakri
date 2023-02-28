@@ -57,6 +57,15 @@ function game() {
   //   }
   // );
   useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+  useEffect(() => {
     const fetchWinningNumber = async () => {
       if (timeToDraw <= 30) { // Only fetch data when there are 5 seconds or less until the next draw
         try {
@@ -68,11 +77,11 @@ function game() {
         }
       }
     };
-      
+
     const timer = setInterval(() => {
       fetchWinningNumber();
     }, 1000);
-  
+
     return () => clearInterval(timer);
   }, [nextToDrawtime, timeToDraw]);
 
@@ -84,7 +93,7 @@ function game() {
       setMustSpin(true);
     }
 
-    
+
   };
   function run() {
     if (timeToDraw == 0) {

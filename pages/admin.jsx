@@ -29,16 +29,8 @@ function game() {
         console.log('value is:', event.target.value + 1);
     };
     
-    useEffect(() => {
-        const timeoutId = setTimeout(() => {
-          window.location.reload();
-        }, 2000);
-      
-        return () => {
-          clearTimeout(timeoutId);
-        };
-      }, []);
-      
+   
+
     useEffect(() => {
         const timer = setInterval(() => {
             setTime(new Date());
