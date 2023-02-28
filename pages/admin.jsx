@@ -4,10 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react'
-import HandleResults from '../components/HandleResults';
-import Wheel from '../components/Wheel'
-import Timer from '../components/Timer'
-import Timerleft from '../components/Timerleft'
+
 import Modal from '../components/ModalResult'
 
 function game() {
