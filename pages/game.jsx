@@ -75,7 +75,7 @@ function game() {
 
   useEffect(() => {
     const fetchWinningNumber = async () => {
-      if (timeToDraw == 10) { // Only fetch data when there are 5 seconds or less until the next draw
+      if (timeToDraw == 25) { // Only fetch data when there are 5 seconds or less until the next draw
         try {
           const response = await axios.get(`/api/getWinningNumber/?drawTime=${nextToDrawtime}`);
           setCouponNum(response.data.couponNum);
