@@ -9,6 +9,7 @@ import axios from 'axios';
 import Timer from '../components/Timer'
 import Timerleft from '../components/Timerleft'
 import { Howl } from 'howler';
+import ResultsTable from '@/components/ResultsTable';
 
 function game() {
   const { state, dispatch } = useContext(DataContext)
@@ -103,9 +104,7 @@ function game() {
   };
   function run() {
     if (timeToDraw == 0) {
-      handleChange()
-      
-      
+      handleChange()   
     }
     if(timeToDraw == 0){
       wheelSound.play()
@@ -135,6 +134,12 @@ timeRemainingSound.play()
 
         <div className='flex w-full absolute'>
           <Timer />
+          <div className='absolute rounded-lg text-white border-2 border-red-500 ml-[70%] lg:w-[30%] w-[20%] h-[20%] mt-[15%]'>
+          <h1 className='font-bold text-[8px] my-2 lg:text-2xl'>For Amusement Purposes Only!</h1>
+          </div>
+       <div className='absolute ml-[70%] w-[1%] lg:w-full mt-[22%] lg:mt-[25%]'>
+          <ResultsTable/>
+          </div>
           <div className='ml-[0%] w-full '>
             <Timerleft />
           </div>
