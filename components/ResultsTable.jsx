@@ -38,7 +38,7 @@ function ResultsTable() {
             <div className=" flex flex-row">
             {drawTimes.map((drawTime, index) => (
         <div key={drawTime}  className="lg:w-[20%] w-[3%] text-white font-bold lg:text-2xl px-4 py-2 border-2 border-white -300">
-        {results[index]}
+        {results[index]+1}
         </div>
         ))}
       </div>
