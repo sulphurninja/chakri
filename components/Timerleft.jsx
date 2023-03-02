@@ -39,7 +39,7 @@ export default function Time() {
             <div
                 className='grid grid-cols-3 gap-y-4  w-[30%] h-[30%] mt-1 justify-items-center ml-[0%]  text-lg'
             >
-                {[10, 20, 30, 50, 100, 500, 1000].map(amount => (
+                {[10, 20, 30, 50, 100, 500, 1000, 5000, 4].map(amount => (
                     <img key={amount} className='h-[100%] cursor-pointer  w-[70%]' src={`/${amount}.png`} />
                 ))}
 
@@ -52,10 +52,10 @@ export default function Time() {
                 <div className="flex absolute justify-center w-full mt-[30%] ml-[70%]">
                     {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(number => (
                         <div className=' relative w-full'>
-                            <img src="/button.png" className="h-[100%]  w-[100%]"
+                            <img src="/button.png" className="h-[90%] cursor-pointer hover:animate-pulse  w-[90%]"
                                 key={number}
                             />
-                                <span className="text-green-200 font-bold absolute text-sm cursor-pointer  lg:text-3xl pl-2  mt-[-70%] ml-[30%] lg:ml-[40%]">{number}</span>
+                                <span className="text-black -200 font-bold absolute text-sm cursor-pointer  lg:text-4xl pl-2  mt-[-60%] ml-[25%] lg:ml-[30%]">{number}</span>
                             </div>
                     ))}
 
