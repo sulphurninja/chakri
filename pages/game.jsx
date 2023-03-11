@@ -34,6 +34,22 @@ function game() {
   const timeRemainingSound = new Howl({
     src: ["/5sec.mp3"],
   });
+  const [hasReloaded, setHasReloaded] = useState(false);
+
+    useEffect(() => {
+        const hasReloadedStorage = localStorage.getItem('hasReloaded');
+        if (!hasReloadedStorage) {
+          localStorage.setItem('hasReloaded', 'true');
+          setHasReloaded(true);
+          window.location.reload();
+        }
+        
+        return () => {
+          localStorage.removeItem('hasReloaded');
+          setHasReloaded(false);
+        };
+      }, []);
+    
 
   useEffect(() => {
     const timer = setInterval(() => {
