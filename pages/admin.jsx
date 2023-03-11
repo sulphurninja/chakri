@@ -1,11 +1,4 @@
-import HeaderText from '../components/HeaderText';
-
-import Head from 'next/head';
-import Link from 'next/link'
-import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react'
-import Timer from '../components/Timer'
-import Modal from '../components/ModalResult'
 import { DataContext } from '../store/GlobalState';
 import AdminPanel from '../components/AdminPanel'
 const { state } = useContext(DataContext);
