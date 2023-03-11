@@ -5,12 +5,12 @@ const { state } = useContext(DataContext);
 const { auth } = state;
 
 
-const admin = () => {
+const Admin = () => {
     if (auth.user && auth.user.role === 'admin') {
         return <AdminPanel />;
 }else{
-    <h1>Not authorized!</h1>
+   return <h1>Not authorized!</h1>
 }
 }
 
-export default admin
+export default Admin
