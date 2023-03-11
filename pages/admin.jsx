@@ -1,11 +1,12 @@
 import HeaderText from '../components/HeaderText';
-import { DataContext } from '@/store/GlobalState';
+
 import Head from 'next/head';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useState } from 'react'
 import Timer from '../components/Timer'
 import Modal from '../components/ModalResult'
+import { DataContext } from '../store/GlobalState';
 const { state } = useContext(DataContext);
 const { auth } = state;
 
