@@ -7,6 +7,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Timer from '../components/Timer'
 import Modal from '../components/ModalResult'
 import { DataContext } from '../store/GlobalState';
+import AdminPanel from '../components/AdminPanel'
 const { state } = useContext(DataContext);
 const { auth } = state;
 
