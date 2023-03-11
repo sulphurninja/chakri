@@ -37,9 +37,17 @@ function login() {
     localStorage.setItem("firstLogin", true);
   };
 
+
   useEffect(() => {
-    if (Object.keys(auth).length !== 0) router.push("/game");
+    if (Object.keys(auth).length !== 0) {
+      if (auth.user.role === 'admin') {
+        router.push("/admin");
+      } else {
+        router.push("/game");
+      }
+    }
   }, [auth]);
+
 
   return (
     <body className="w-screen h-screen relative">
