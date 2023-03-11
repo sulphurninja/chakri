@@ -28,7 +28,7 @@ export default function ImageCarousel() {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative">
       {images.map((image, index) => (
         <img
           key={image}
