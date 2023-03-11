@@ -40,7 +40,7 @@ function ResultsTable() {
           Promise.all(drawTimes.map(drawTime => (
             fetch(`/api/getPrior?drawTime=${drawTime}`).then(res => res.json())
           ))).then(results => {
-            setResults(results.map(result => (result.couponNum === 10 ? '0' : result.couponNum + 1)));
+            setResults(results.map(result => (result.couponNum == 10 ? '0' : result.couponNum + 1)));
           });
         }, 1000);
         return () => {
@@ -55,7 +55,7 @@ return (
             <div className=" flex flex-row">
                 {drawTimes.map((drawTime, index) => (
                     <div key={drawTime} className="lg:w-[20%] w-[3%] text-white font-bold lg:text-2xl px-4 py-2 border-2 border-white -300">
-                        {results[index === 10 ? '0' : [index]]} 
+                        {results[index == 10 ? '0' : [index]]} 
                     </div>
                 ))}
             </div>
